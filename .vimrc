@@ -260,14 +260,14 @@ if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
 
-    colorscheme railscasts3
+    colorscheme wombat256
     set guitablabel=%M%t
-    set lines=40
-    set columns=115
 
     if has("gui_gnome")
         set term=gnome-256color
-        colorscheme railscasts3
+        colorscheme solarized
+        set lines=42
+        set columns=130
     endif
 
     if has("gui_mac") || has("gui_macvim")
@@ -373,3 +373,5 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'} 
+
+au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
